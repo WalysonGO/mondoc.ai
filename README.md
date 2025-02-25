@@ -28,12 +28,17 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 - Nenhuma dependência adicional é necessária
 
 ## Instalação
-1. Baixe o binário `mondoc` e conceda permissão de execução:
+1. Faça o download do repositório no GitHub:
+   ```sh
+   git clone https://github.com/WalysonGO/mondoc.ai.git
+   ```
+
+2. Baixe o binário `mondoc` e conceda permissão de execução:
    ```sh
    chmod +x mondoc
    ```
 
-2. Opcionalmente, mova o binário para um diretório acessível do sistema:
+3. Opcionalmente, mova o binário para um diretório acessível do sistema:
    ```sh
    sudo mv mondoc /usr/local/bin/mondoc
    ```
