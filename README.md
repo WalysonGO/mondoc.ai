@@ -32,7 +32,7 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 ### Linux
 1. Baixe e execute o script de instalação:
    ```sh
-   curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/install.sh && chmod +x install.sh && ./install.sh
+   curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/install.sh && chmod +x install.sh && ./install.sh
    ```
 
 O script irá:
