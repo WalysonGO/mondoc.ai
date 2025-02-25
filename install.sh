@@ -12,7 +12,7 @@ check_command_success() {
 update_mondoc() {
     echo "Updating Mondoc..."
     cd /tmp
-    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/mondoc
+    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
     check_command_success
     chmod +x mondoc
     sudo mv mondoc /usr/local/bin/mondoc
@@ -22,7 +22,7 @@ update_mondoc() {
 
 # Passo 1: Download the binary
 echo "Downloading Mondoc binary..."
-curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/mondoc
+curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
 check_command_success
 
 # Passo 2: Conceder permissão de execução ao binário
