@@ -24,10 +24,12 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 - ✅ **Interface interativa**: Guia o usuário através de perguntas simples para configurar a documentação.
 
 ## Requisitos
-- Sistema operacional: **Linux**
+- Sistema operacional: **Linux** ou **Windows com WSL**
 - Nenhuma dependência adicional é necessária
 
 ## Instalação
+
+### Linux
 1. Faça o download do repositório no GitHub:
    ```sh
    git clone https://github.com/WalysonGO/mondoc.ai.git
@@ -47,6 +49,14 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
    ```sh
    sudo mv mondoc /usr/local/bin/mondoc
    ```
+
+### Windows (WSL)
+1. Instale o WSL seguindo as instruções oficiais da Microsoft:
+   ```sh
+   wsl --install
+   ```
+
+2. Após reiniciar o computador, abra o WSL e siga os mesmos passos da instalação para Linux acima.
 
 ## Como Usar
 Simplesmente execute o binário do Mondoc:
