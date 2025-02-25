@@ -33,12 +33,17 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
    git clone https://github.com/WalysonGO/mondoc.ai.git
    ```
 
-2. Baixe o binário `mondoc` e conceda permissão de execução:
+2. Entre no diretório do projeto:
+   ```sh
+   cd mondoc.ai
+   ```
+
+3. Baixe o binário `mondoc` e conceda permissão de execução:
    ```sh
    chmod +x mondoc
    ```
 
-3. Opcionalmente, mova o binário para um diretório acessível do sistema:
+4. Opcionalmente, mova o binário para um diretório acessível do sistema:
    ```sh
    sudo mv mondoc /usr/local/bin/mondoc
    ```
