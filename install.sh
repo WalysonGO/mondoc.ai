@@ -3,50 +3,44 @@
 # Função para verificar se o comando foi executado com sucesso
 check_command_success() {
     if [ $? -ne 0 ]; then
-        echo "Erro: O comando falhou. Saindo..."
+        echo "Error: Command failed. Exiting..."
         exit 1
     fi
 }
 
 # Função para atualizar o Mondoc
 update_mondoc() {
-    echo "Atualizando o Mondoc..."
+    echo "Updating Mondoc..."
     cd /tmp
-    git clone https://github.com/WalysonGO/mondoc.ai.git
+    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/mondoc
     check_command_success
-    cd mondoc.ai
     chmod +x mondoc
     sudo mv mondoc /usr/local/bin/mondoc
     check_command_success
-    cd ..
-    rm -rf mondoc.ai
-    echo "Mondoc atualizado com sucesso!"
+    echo "Mondoc updated successfully!"
 }
 
-# Passo 1: Clonar o repositório
-echo "Baixando o repositório do GitHub..."
-git clone https://github.com/WalysonGO/mondoc.ai.git
+# Passo 1: Download the binary
+echo "Downloading Mondoc binary..."
+curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/mondoc
 check_command_success
 
-# Passo 2: Navegar para o diretório do projeto
-cd mondoc.ai || { echo "Falha ao acessar o diretório do projeto."; exit 1; }
-
-# Passo 3: Conceder permissão de execução ao binário
-echo "Concedendo permissão de execução ao binário..."
+# Passo 2: Conceder permissão de execução ao binário
+echo "Granting execution permission..."
 chmod +x mondoc
 check_command_success
 
-# Passo 4: Mover o binário para o diretório de execução global
-echo "Movendo o binário para /usr/local/bin..."
+# Passo 3: Mover o binário para o diretório de execução global
+echo "Moving binary to /usr/local/bin..."
 sudo mv mondoc /usr/local/bin/mondoc
 check_command_success
 
-# Passo 5: Execução do binário
-echo "Deseja rodar o Mondoc agora? (S/N)"
-read -r rodar_mondoc
-if [[ "$rodar_mondoc" == "S" || "$rodar_mondoc" == "s" ]]; then
-    echo "Executando o Mondoc..."
+# Passo 4: Execução do binário
+echo "Would you like to run Mondoc now? (Y/N)"
+read -r run_mondoc
+if [[ "$run_mondoc" == "Y" || "$run_mondoc" == "y" ]]; then
+    echo "Executing Mondoc..."
     mondoc
 fi
 
-echo "Instalação e configuração do Mondoc.ai concluída com sucesso!"
+echo "Mondoc.ai installation and configuration completed successfully!"
