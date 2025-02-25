@@ -30,25 +30,16 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 ## Instalação
 
 ### Linux
-1. Faça o download do repositório no GitHub:
+1. Baixe e execute o script de instalação:
    ```sh
-   git clone https://github.com/WalysonGO/mondoc.ai.git
+   curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/main/install.sh && chmod +x install.sh && ./install.sh
    ```
 
-2. Entre no diretório do projeto:
-   ```sh
-   cd mondoc.ai
-   ```
-
-3. Baixe o binário `mondoc` e conceda permissão de execução:
-   ```sh
-   chmod +x mondoc
-   ```
-
-4. Opcionalmente, mova o binário para um diretório acessível do sistema:
-   ```sh
-   sudo mv mondoc /usr/local/bin/mondoc
-   ```
+O script irá:
+- Clonar o repositório
+- Configurar as permissões necessárias
+- Oferecer a opção de instalar globalmente
+- Perguntar se você deseja executar o Mondoc imediatamente
 
 ### Windows (WSL)
 1. Instale o WSL seguindo as instruções oficiais da Microsoft:
@@ -56,7 +47,7 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
    wsl --install
    ```
 
-2. Após reiniciar o computador, abra o WSL e siga os mesmos passos da instalação para Linux acima.
+2. Após reiniciar o computador, abra o WSL e execute o script de instalação como descrito acima.
 
 ## Como Usar
 Simplesmente execute o binário do Mondoc:
