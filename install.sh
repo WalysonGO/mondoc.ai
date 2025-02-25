@@ -41,6 +41,9 @@ read -r run_mondoc
 if [[ "$run_mondoc" == "Y" || "$run_mondoc" == "y" ]]; then
     echo "Executing Mondoc..."
     mondoc
+    if [ $? -ne 0 ]; then
+        echo "Warning: Mondoc execution generated an error but installation completed"
+    fi
 fi
 
 echo "Mondoc.ai installation and configuration completed successfully!"

@@ -26,7 +26,7 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 
 ## Requisitos
 - Sistema operacional: **Linux** ou **Windows com WSL**
-- Nenhuma dependência adicional é necessária
+- Python 3.12 ou posterior
 - Arquivo de configuração `mondoc_ai.config.json` na raiz do projeto
 
 ## Configuração
@@ -48,10 +48,12 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/install.sh && chmod +x install.sh && ./install.sh
    ```
 
+⚠️ **Nota**: Após a instalação, você pode encontrar um erro relacionado à biblioteca Python. Este é um problema conhecido que está sendo resolvido.
+
 O script irá:
-- Clonar o repositório
+- Baixar o binário Mondoc
 - Configurar as permissões necessárias
-- Oferecer a opção de instalar globalmente
+- Mover o binário para /usr/local/bin
 - Perguntar se você deseja executar o Mondoc imediatamente
 
 ### Windows (WSL)
