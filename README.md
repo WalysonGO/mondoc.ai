@@ -1,7 +1,7 @@
 # Mondoc.ai
 
 ## Sobre o Projeto
-O **Mondoc.ai** é uma ferramenta automatizada para geração de documentação de código-fonte em projetos de desenvolvimento. Ele analisa arquivos de código em diversas linguagens, como Python, JavaScript, TypeScript e PHP, e gera documentação detalhada no formato **Markdown**.
+O **Mondoc.ai** é uma ferramenta inteligente de documentação automatizada para projetos de desenvolvimento. Ele analisa arquivos de código em diversas linguagens, como Python, JavaScript, TypeScript e PHP, e gera documentação detalhada no formato **Markdown**. Com integração ao Git, ele é capaz de identificar mudanças no código e atualizar apenas a documentação necessária.
 
 ## Objetivo do Projeto
 O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação técnica para projetos de software, garantindo que os arquivos tenham descrições estruturadas sobre:
@@ -15,7 +15,8 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 - **Melhores práticas**
 
 ## Principais Funcionalidades
-- ✅ **Análise automática do código**: Identifica arquivos suportados e extrai informações relevantes.
+- ✅ **Análise inteligente do código**: Identifica arquivos suportados e extrai informações relevantes usando IA.
+- ✅ **Integração com Git**: Detecta alterações no código e atualiza apenas a documentação necessária.
 - ✅ **Suporte a múltiplos idiomas**: Gera documentação em **inglês** ou **português**, conforme a escolha do usuário.
 - ✅ **Armazenamento de progresso**: Mantém um arquivo temporário (`.mondoc_ai.temp`) para evitar geração duplicada.
 - ✅ **Personalização**: Permite ao usuário definir o nome da pasta de documentação e o idioma desejado.
@@ -26,6 +27,18 @@ O principal objetivo do **Mondoc.ai** é facilitar a criação de documentação
 ## Requisitos
 - Sistema operacional: **Linux** ou **Windows com WSL**
 - Nenhuma dependência adicional é necessária
+- Arquivo de configuração `mondoc_ai.config.json` na raiz do projeto
+
+## Configuração
+É necessário criar um arquivo `mondoc_ai.config.json` na raiz do projeto que deseja documentar. O arquivo deve conter:
+
+```json
+{
+    "folder_name": "docs", // nome da pasta onde vai ficar a documentação, porém por padrão é docs
+    "language": "en_us", // pt_br
+    "project_notes": "não é utilizado o express e/ou @types/express e/ou cors em qualquer lugar do projeto. Este é um projeto lambda(AWS)." // exemplo do que poderia ser escrito
+}
+```
 
 ## Instalação
 
