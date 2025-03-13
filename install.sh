@@ -42,6 +42,7 @@ update_mondoc() {
     chmod +x mondoc
     sudo mv mondoc /usr/local/bin/mondoc
     check_command_success
+    show_ascii_art
     echo "Mondoc.ai update and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
 }
 
@@ -67,6 +68,6 @@ if [ ! -f "/usr/local/bin/mondoc" ]; then
     echo "Moving binary to /usr/local/bin..."
     sudo mv mondoc /usr/local/bin/mondoc
     check_command_success
-
+    show_ascii_art
     echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
 fi
