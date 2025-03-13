@@ -16,7 +16,6 @@ EOF
 )
 
 show_ascii_art() {
-    clear
     echo "$ASCII_ART"
 }
 
@@ -32,33 +31,39 @@ check_command_success() {
 update_mondoc() {
     show_ascii_art
     echo "Updating Mondoc..."
-    cd /tmp
-    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
+    cd /tmp || exit
+    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc > /dev/null 2>&1
     check_command_success
     chmod +x mondoc
     sudo mv mondoc /usr/local/bin/mondoc
     check_command_success
-    echo "Mondoc updated successfully!"
+    echo "Mondoc.ai update and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
+    exit
 }
 
-show_ascii_art
-# Passo 1: Download the binary
-echo "Downloading Mondoc binary..."
-curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
-check_command_success
+if [ -f "/usr/local/bin/mondoc" ]; then
+    echo "Mondoc is already installed. Updating..."
+    update_mondoc
+else
+    show_ascii_art
+    echo "Installing Mondoc for the first time..."
+    # Passo 1: Download the binary
+    echo "Downloading Mondoc binary..."
+    curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc > /dev/null 2>&1
+    check_command_success
 
-show_ascii_art
-# Passo 2: Conceder permissão de execução ao binário
-echo "Granting execution permission..."
-chmod +x mondoc
-check_command_success
+    show_ascii_art
+    # Passo 2: Conceder permissão de execução ao binário
+    echo "Granting execution permission..."
+    chmod +x mondoc
+    check_command_success
 
-show_ascii_art
-# Passo 3: Mover o binário para o diretório de execução global
-echo "Moving binary to /usr/local/bin..."
-sudo mv mondoc /usr/local/bin/mondoc
-check_command_success
+    show_ascii_art
+    # Passo 3: Mover o binário para o diretório de execução global
+    echo "Moving binary to /usr/local/bin..."
+    sudo mv mondoc /usr/local/bin/mondoc
+    check_command_success
 
-show_ascii_art
-echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
+    show_ascii_art
+    echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
 
