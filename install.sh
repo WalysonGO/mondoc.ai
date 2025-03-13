@@ -27,6 +27,7 @@ check_command_success() {
         echo "Error: Command failed. Exiting..."
         exit 1
     fi
+    clear
 }
 
 # Função para atualizar o Mondoc
