@@ -27,11 +27,13 @@ check_command_success() {
         echo "Error: Command failed. Exiting..."
         exit 1
     fi
+    show_ascii_art
     clear
 }
 
 # Função para atualizar o Mondoc
 update_mondoc() {
+    show_ascii_art
     echo "Updating Mondoc..."
     cd /tmp || exit
     curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc > /dev/null 2>&1
@@ -48,6 +50,7 @@ if [ -f "/usr/local/bin/mondoc" ]; then
 fi
 
 if [ ! -f "/usr/local/bin/mondoc" ]; then
+    show_ascii_art
     echo "Installing Mondoc for the first time..."
     # Passo 1: Download the binary
     echo "Downloading Mondoc binary..."
