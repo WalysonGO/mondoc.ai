@@ -66,4 +66,4 @@ else
 
     show_ascii_art
     echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
-
+fi
