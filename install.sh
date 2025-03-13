@@ -43,7 +43,7 @@ update_mondoc() {
     sudo mv mondoc /usr/local/bin/mondoc
     check_command_success
     echo "Mondoc.ai update and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
-    rm -rf install.sh > /dev/null 2>&1
+    rm -rf "$0" > /dev/null 2>&1
 }
 
 if [ -f "/usr/local/bin/mondoc" ]; then
@@ -70,5 +70,5 @@ if [ ! -f "/usr/local/bin/mondoc" ]; then
     check_command_success
 
     echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
-    rm -rf install.sh > /dev/null 2>&1
+    rm -rf "$0" > /dev/null 2>&1
 fi
