@@ -30,7 +30,7 @@ check_command_success() {
 
 # Função para atualizar o Mondoc
 update_mondoc() {
-    show_ascii_art()
+    show_ascii_art
     echo "Updating Mondoc..."
     cd /tmp
     curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
@@ -41,23 +41,24 @@ update_mondoc() {
     echo "Mondoc updated successfully!"
 }
 
-show_ascii_art()
+show_ascii_art
 # Passo 1: Download the binary
 echo "Downloading Mondoc binary..."
 curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
 check_command_success
 
-show_ascii_art()
+show_ascii_art
 # Passo 2: Conceder permissão de execução ao binário
 echo "Granting execution permission..."
 chmod +x mondoc
 check_command_success
 
-show_ascii_art()
+show_ascii_art
 # Passo 3: Mover o binário para o diretório de execução global
 echo "Moving binary to /usr/local/bin..."
 sudo mv mondoc /usr/local/bin/mondoc
 check_command_success
 
-show_ascii_art()
+show_ascii_art
 echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
+
