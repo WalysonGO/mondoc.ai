@@ -1,5 +1,25 @@
 #!/bin/bash
 
+# ASCII Art para o script de instalação
+ASCII_ART=$(cat <<'EOF'
+
+   __  ___  ____    _  __   ___   ____   _____
+  /  |/  / / __ \  / |/ /  / _ \ / __ \ / ___/
+ / /|_/ / / /_/ / /    /  / // // /_/ // /__
+/_/  /_/  \____/ /_/|_/  /____/ \____/ \___/
+
+Mondoc - Documentação Inteligente - By.: Walyson GO
+
+----------------------------------------------------
+
+EOF
+)
+
+show_ascii_art() {
+    clear
+    echo "$ASCII_ART"
+}
+
 # Função para verificar se o comando foi executado com sucesso
 check_command_success() {
     if [ $? -ne 0 ]; then
@@ -10,6 +30,7 @@ check_command_success() {
 
 # Função para atualizar o Mondoc
 update_mondoc() {
+    show_ascii_art()
     echo "Updating Mondoc..."
     cd /tmp
     curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
@@ -20,30 +41,23 @@ update_mondoc() {
     echo "Mondoc updated successfully!"
 }
 
+show_ascii_art()
 # Passo 1: Download the binary
 echo "Downloading Mondoc binary..."
 curl -O https://raw.githubusercontent.com/WalysonGO/mondoc.ai/master/mondoc
 check_command_success
 
+show_ascii_art()
 # Passo 2: Conceder permissão de execução ao binário
 echo "Granting execution permission..."
 chmod +x mondoc
 check_command_success
 
+show_ascii_art()
 # Passo 3: Mover o binário para o diretório de execução global
 echo "Moving binary to /usr/local/bin..."
 sudo mv mondoc /usr/local/bin/mondoc
 check_command_success
 
-# Passo 4: Execução do binário
-echo "Would you like to run Mondoc now? (Y/N)"
-read -r run_mondoc
-if [[ "$run_mondoc" == "Y" || "$run_mondoc" == "y" ]]; then
-    echo "Executing Mondoc..."
-    mondoc
-    if [ $? -ne 0 ]; then
-        echo "Warning: Mondoc execution generated an error but installation completed"
-    fi
-fi
-
-echo "Mondoc.ai installation and configuration completed successfully!"
+show_ascii_art()
+echo "Mondoc.ai installation and configuration completed successfully! Use 'mondoc' to start the Mondoc.ai CLI."
