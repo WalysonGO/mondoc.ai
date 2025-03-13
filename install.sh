@@ -8,7 +8,7 @@ ASCII_ART=$(cat <<'EOF'
  / /|_/ / / /_/ / /    /  / // // /_/ // /__
 /_/  /_/  \____/ /_/|_/  /____/ \____/ \___/
 
-Mondoc - Documentação Inteligente - By.: Walyson GO
+Mondoc.ai - v1.8 - Documentação Inteligente - By.: Walyson GO
 
 ----------------------------------------------------
 
