@@ -16,6 +16,7 @@ EOF
 )
 
 show_ascii_art() {
+    clear
     echo "$ASCII_ART"
 }
 
